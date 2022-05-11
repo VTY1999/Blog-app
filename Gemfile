@@ -6,15 +6,11 @@ ruby '3.1.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
-gem 'rubocop', '>= 1.0', '< 2.0'
-
-gem 'pg'
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -74,3 +70,25 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'database_cleaner-active_record'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+end
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end
+
+gem 'ffi', '~> 1.15', '>= 1.15.5'
+
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
