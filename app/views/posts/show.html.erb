@@ -1,1 +1,15 @@
-<h1>Show Post</h1>
+<ul class="singleUserOnePost">
+  <div class="singlePost">
+    <h4><%= @post.title %></h4>
+    <p><%= @post.text %></p>
+  </div>
+
+  <div class="singleComment">
+    <h4>Comments:</h4>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <p><%= comment.user.name %>: <%= comment.text %></p>
+      <% end %>
+    </ul>
+  </div>
+</ul>
