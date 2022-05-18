@@ -1,5 +1,6 @@
 <section class="singleUser--section">
 <ul class="userProfile">
+<h1> <%= @user.name %> posts </h1>
     <ul class="User">
       <li class="userImage">
         <img src=<%= @user.photo %> alt="UserImage"></li>
@@ -25,7 +26,7 @@
           <div class="singleComment">
             <h4>Comments:</h4>
             <ul>
-              <% post.latest_five_comment.each do |comment| %>
+              <% post.recent_comments.each do |comment| %>
                 <p><%= comment.user.name %>: <%= comment.text %></p>
               <% end %>
             </ul>
