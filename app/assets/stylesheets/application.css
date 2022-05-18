@@ -120,3 +120,19 @@ a {
 .this {
   padding: 14px 5px;
 }
+
+.addNewdiv {
+  display: flex;
+  margin: 5px 0;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.addCom {
+  border: none;
+  text-decoration: underline;
+  color: black;
+  padding: 3px;
+  background: none;
+}
