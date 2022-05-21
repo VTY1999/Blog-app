@@ -136,3 +136,8 @@ a {
   padding: 3px;
   background: none;
 }
+
+.color-blue {
+  background: #0f033d;
+  color: #f1ecea;
+}
