@@ -35,7 +35,7 @@ RSpec.describe Post, type: :model do
     comment4 = post.comments.create(text: 'this is a comment4', user: comment_creator)
     comment5 = post.comments.create(text: 'this is a comment5', user: comment_creator)
 
-    recent_comments = post.latest_five_comment
+    recent_comments = post.recent_comments
     expect(recent_comments.length).to eql(5)
     expect(recent_comments).to match_array([comment1, comment2, comment3, comment4, comment5])
   end
