@@ -25,7 +25,7 @@ development:
   <<: *default
   database: Project_development
   host: localhost
-  username: Project
+  username: postgres
   password: Oluwatoyin1@
   encoding: UTF8
   port: 5432
@@ -63,6 +63,9 @@ development:
 test:
   <<: *default
   database: Project_test
+  username: postgres
+  host: localhost
+  password: Oluwatoyin1@
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -87,6 +90,6 @@ test:
 production:
   <<: *default
   database: Project_production
-  username: Project
+  username: postgres
   host: localhost
-  password: <%= ENV["PROJECT_DATABASE_PASSWORD"] %>
+  password: Oluwatoyin1@
