@@ -11,9 +11,10 @@ class LikesController < ApplicationController
     if @like.save
       @post = Post.find(params[:post_id])
       redirect_to user_post_path(user_id: @post.user_id, id: @post.id)
+      flash[:notice] = 'Thanks for the like!'
     else
-      redirect_to user_post_path(user_id: @post.user_id, id: @post.id),
-                  alert: 'Error occurred while creating the like'
+      redirect_to user_post_path(user_id: @post.user_id, id: @post.id)
+      flash[:notice] = 'Like not submitted!'
     end
   end
 end

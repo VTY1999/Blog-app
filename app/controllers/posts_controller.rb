@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.includes(:posts).find(params[:user_id])
     @posts = @user.posts
   end
 
@@ -18,8 +18,10 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to user_path(id: @post.user_id)
+      flash[:notice] = 'Posted successfully!'
     else
-      render :new, alert: 'Error while creating the post'
+      render :new
+      flash[:notice] = 'No post yet'
     end
   end
 
