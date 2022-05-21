@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   it 'test that the user is created properly' do
     name = 'Alfred'
     photo = 'https://images.unsplash.com/photo-1642024728966-7492bae9bb60?w=300'
-    user = User.new(name: name, photo: photo, bio: 'Hi', posts_counter: 0)
+    user = User.new(name:, photo:, bio: 'Hi', posts_counter: 0)
     expect(user).to be_valid
   end
 

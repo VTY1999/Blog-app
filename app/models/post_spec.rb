@@ -15,10 +15,10 @@ RSpec.describe Post, type: :model do
   it 'Should increse posts_counter' do
     user = User.new(name: 'John', photo: '', bio: '', posts_counter: 0)
     expect(user).to be_valid
-    Post.create!(title: 'Post 1ere', text: 'this is my post', comments_counter: 0, likes_counter: 0, user: user)
-    Post.create!(title: 'Second Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, user: user)
-    Post.create!(title: 'Third Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, user: user)
-    Post.create!(title: 'Fourth Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, user: user)
+    Post.create!(title: 'Post 1ere', text: 'this is my post', comments_counter: 0, likes_counter: 0, user:)
+    Post.create!(title: 'Second Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, user:)
+    Post.create!(title: 'Third Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, user:)
+    Post.create!(title: 'Fourth Post', text: 'this is my post', comments_counter: 0, likes_counter: 0, user:)
     expect(user.posts_counter).to eql(4)
   end
 
