@@ -92,3 +92,5 @@ end
 gem 'ffi', '~> 1.15', '>= 1.15.5'
 
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+
+gem 'bullet', group: 'development'
