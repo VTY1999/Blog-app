@@ -9,5 +9,5 @@ Rails.application.routes.draw do
       resources :likes, only: [:new, :create]
     end
   end
-  root to: 'users#index'
+  root to: 'home#index'
 end
