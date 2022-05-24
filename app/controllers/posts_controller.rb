@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       flash[:notice] = 'Posted successfully!'
     else
       render :new
-      flash[:notice] = 'No post yet'
+      flash[:alert] = 'No post yet'
     end
   end
 
