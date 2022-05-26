@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.includes(:posts).find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
+    @posts = @user.posts
   end
 
   def show
@@ -23,6 +23,13 @@ class PostsController < ApplicationController
       render :new
       flash[:alert] = 'No post yet'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(params[:user_id])
+    authorize! :destroy, @post
   end
 
   def post_params

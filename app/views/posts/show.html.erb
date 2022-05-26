@@ -3,6 +3,9 @@
   <div class="singlePost">
     <h4><%= @post.title %></h4>
     <p><%= @post.text %></p>
+    <% if can? :destroy, @post %>
+    <%= button_to 'Delete post', user_post_path(@post.user, @post.id), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-outline-dark' %>
+  <% end %>
   </div>
 
   <div class="right">
@@ -14,6 +17,9 @@
     <ul>
       <% @post.comments.includes(:user).each do |comment| %>
         <p><%= comment.user.name %>: <%= comment.text %></p>
+           <% if can? :destroy, comment %>
+            <%= button_to 'Delete comment', user_post_comment_path(@post.user, @post.id), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-outline-dark' %>
+        <% end %>
       <% end %>
     </ul>
   </div>
