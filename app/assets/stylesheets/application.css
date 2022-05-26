@@ -143,18 +143,30 @@ a {
 }
 
 .navbar {
-  border: solid 3px #000;
-  padding: 2%;
+  border: solid 2px #000;
+  padding: 3%;
+  background-color: #191236;
 }
 
 .hd {
-  font-size: 30px;
+  font-size: 35px;
   padding-bottom: 6px;
+  text-align: center;
+  color: #fff;
 }
 
 .signin {
-  border-right: solid 3px #000;
-  padding-right: 1%;
+  border-radius: 20px;
+  padding: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 14px;
+  background-color: #f9f7f6;
+  color: #a6b2cb;
+}
+
+.signin:hover {
+  background-color: #06ca72;
 }
 
 .hdsu {
@@ -168,7 +180,8 @@ a {
   display: grid;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 40%;
+  line-height: 15px;
 }
 
 .actions {
@@ -176,6 +189,12 @@ a {
   display: grid;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 40%;
   padding-top: 2%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
