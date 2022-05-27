@@ -1,0 +1,33 @@
+22-05-27 15:35:15.3409877 pid:15960 tid:1 sqltools Critical: 0 : An unhandled exception occurred: Newtonsoft.Json.JsonSerializationException: Error setting value to 'SchemaVersion' on 'Microsoft.SqlServer.Management.Assessment.Configuration.Ruleset'.
+ ---> System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.
+   at Newtonsoft.Json.Utilities.ExpressionReflectionDelegateFactory.CreateSet[T](PropertyInfo propertyInfo)
+   at Newtonsoft.Json.Utilities.ReflectionDelegateFactory.CreateSet[T](MemberInfo memberInfo)
+   at Newtonsoft.Json.Serialization.ExpressionValueProvider.SetValue(Object target, Object value)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.ExpressionValueProvider.SetValue(Object target, Object value)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize[T](JsonReader reader)
+   at Microsoft.SqlServer.Management.Assessment.Engine.LoadRuleFactoryJson(JsonTextReader reader)
+   at Microsoft.SqlServer.Management.Assessment.Engine.LoadRuleFactoryJson(TextReader textReader)
+   at Microsoft.SqlServer.Management.Assessment.Engine.PushRuleFactoryJson(TextReader textReader, String alias)
+   at Microsoft.SqlServer.Management.Assessment.Engine.LoadJsonConfig()
+   at Microsoft.SqlServer.Management.Assessment.Engine..ctor()
+   at Microsoft.SqlTools.ServiceLayer.SqlAssessment.SqlAssessmentService..ctor() in D:\a\_work\1\s\src\Microsoft.SqlTools.ServiceLayer\SqlAssessment\SqlAssessmentService.cs:line 72
+   at Microsoft.SqlTools.ServiceLayer.SqlAssessment.SqlAssessmentService.<>c.<.cctor>b__33_0() in D:\a\_work\1\s\src\Microsoft.SqlTools.ServiceLayer\SqlAssessment\SqlAssessmentService.cs:line 44
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.SqlTools.ServiceLayer.SqlAssessment.SqlAssessmentService.get_Instance() in D:\a\_work\1\s\src\Microsoft.SqlTools.ServiceLayer\SqlAssessment\SqlAssessmentService.cs:line 63
+   at Microsoft.SqlTools.ServiceLayer.HostLoader.InitializeRequestHandlersAndServices(ServiceHost serviceHost, SqlToolsContext sqlToolsContext) in D:\a\_work\1\s\src\Microsoft.SqlTools.ServiceLayer\HostLoader.cs:line 152
+   at Microsoft.SqlTools.ServiceLayer.HostLoader.CreateAndStartServiceHost(SqlToolsContext sqlToolsContext) in D:\a\_work\1\s\src\Microsoft.SqlTools.ServiceLayer\HostLoader.cs:line 62
+   at Microsoft.SqlTools.ServiceLayer.Program.Main(String[] args) in D:\a\_work\1\s\src\Microsoft.SqlTools.ServiceLayer\Program.cs:line 49
+Callstack=   at System.Environment.get_StackTrace()
+   at System.Diagnostics.TraceEventCache.get_Callstack()
+   at Microsoft.SqlTools.Utility.SqlToolsTraceListene
